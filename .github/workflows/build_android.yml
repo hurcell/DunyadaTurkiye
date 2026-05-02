@@ -70,7 +70,7 @@ jobs:
           sudo apt-get update && sudo apt-get install -y expect
           rm -rf ~/.bubblewrap
           cat << 'EOF' > build.exp
-          set timeout 20
+          set timeout -1
           spawn bubblewrap update
           expect {
             -re "(?i)(download|install|agreement|license|agree).*\\?" { send "y\r"; exp_continue }
